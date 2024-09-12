@@ -1,7 +1,10 @@
 import Menu from "./menu/Menu";
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
+import "./App.css";
 
 const App = () => {
+  if (!localStorage.getItem("token")) return <Navigate to="/login" />;
+
   return (
     <>
       <Menu />
